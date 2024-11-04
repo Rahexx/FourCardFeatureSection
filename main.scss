@@ -5,9 +5,11 @@ $blue: hsl(212, 86%, 64%);
 $very-dark-blue: hsl(234, 12%, 34%);
 $grayish-blue: hsl(229, 6%, 66%);
 $very-light-gray: hsl(0, 0%, 98%);
+$white: hsl(0, 0%, 100%);
 $font-weight-light: 200;
 $font-weight-regular: 400;
 $font-weight-bold: 600;
+$font-size-small: 0.933rem;
 $font-size-base: 15px;
 $font-size-large: 1.067rem;
 $font-size-big: 1.7rem;
@@ -52,5 +54,67 @@ body {
     font-size: $font-size-large;
     font-weight: $font-weight-regular;
     text-align: center;
+  }
+}
+
+.container {
+  padding-bottom: 80px;
+
+  .section {
+    position: relative;
+    height: 240px;
+    width: 86%;
+    margin: 0 auto 24px;
+    padding: 24px;
+    background: $white;
+    border-radius: 8px;
+    box-shadow: 2px 4px 12px 0 rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      display: block;
+      content: '';
+    }
+
+    &.supervisor::before {
+      background: $cyan;
+    }
+
+    &.team::before {
+      background: $red;
+    }
+
+    &.karma::before {
+      background: $orange;
+    }
+
+    &.calculator::before {
+      background: $blue;
+    }
+
+    &_title {
+      color: $very-dark-blue;
+      font-size: $font-size-big;
+      font-weight: $font-weight-bold;
+    }
+
+    &_text {
+      margin-top: 4px;
+      color: $grayish-blue;
+      line-height: 26px;
+      font-size: $font-size-small;
+      font-weight: $font-weight-regular;
+    }
+
+    &_icon {
+      position: absolute;
+      bottom: 24px;
+      right: 24px;
+    }
   }
 }
