@@ -13,6 +13,7 @@ $font-size-small: 0.933rem;
 $font-size-base: 15px;
 $font-size-large: 1.067rem;
 $font-size-big: 1.7rem;
+$font-size-xl: 2.13rem;
 
 * {
   box-sizing: border-box;
@@ -115,6 +116,69 @@ body {
       position: absolute;
       bottom: 24px;
       right: 24px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+    max-width: 450px;
+    margin: 0 auto;
+
+    &_title {
+      font-size: $font-size-xl;
+    }
+  }
+  .container {
+    max-width: 425px;
+    margin: 0 auto;
+
+    .section_text {
+      font-size: $font-size-large;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: none;
+    display: flex;
+    flex-wrap: wrap;
+
+    .section {
+      width: 425px;
+    }
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 425px 425px 425px;
+    grid-template-rows: 120px 120px 120px 120px;
+    row-gap: 12px;
+    column-gap: 24px;
+    grid-template-areas:
+      '. team .'
+      'supervisor team calculator'
+      'supervisor karma calculator'
+      '. karma .';
+
+    .supervisor {
+      grid-area: supervisor;
+    }
+
+    .team {
+      grid-area: team;
+    }
+
+    .karma {
+      grid-area: karma;
+    }
+
+    .calculator {
+      grid-area: calculator;
     }
   }
 }
