@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+html {
+  font-size: 15px; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fafafa; }
+
+.header {
+  padding: 80px 0;
+  line-height: 35px;
+  color: #4c4e61; }
+  .header_title {
+    font-size: 1.7rem;
+    font-weight: 200;
+    text-align: center; }
+  .header_highlight {
+    font-size: 1.7rem;
+    font-weight: 600;
+    text-align: center;
+    display: block; }
+  .header_description {
+    margin: 14px 28px 0;
+    color: #a3a5ae;
+    line-height: 26px;
+    font-size: 1.067rem;
+    font-weight: 400;
+    text-align: center; }
+
+.container {
+  padding-bottom: 80px; }
+  .container .section {
+    position: relative;
+    height: 240px;
+    width: 86%;
+    margin: 0 auto 24px;
+    padding: 24px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 2px 4px 12px 0 rgba(0, 0, 0, 0.2);
+    overflow: hidden; }
+    .container .section::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      display: block;
+      content: ''; }
+    .container .section.supervisor::before {
+      background: #45d3d3; }
+    .container .section.team::before {
+      background: #ea5353; }
+    .container .section.karma::before {
+      background: #fcaf4a; }
+    .container .section.calculator::before {
+      background: #549ef2; }
+    .container .section_title {
+      color: #4c4e61;
+      font-size: 1.7rem;
+      font-weight: 600; }
+    .container .section_text {
+      margin-top: 4px;
+      color: #a3a5ae;
+      line-height: 26px;
+      font-size: 0.933rem;
+      font-weight: 400; }
+    .container .section_icon {
+      position: absolute;
+      bottom: 24px;
+      right: 24px; }
+
+@media (min-width: 768px) {
+  .header {
+    max-width: 450px;
+    margin: 0 auto; }
+    .header_title, .header_highlight {
+      font-size: 2.13rem; }
+
+  .container {
+    max-width: 425px;
+    margin: 0 auto; } }
+@media (min-width: 992px) {
+  .container {
+    max-width: none;
+    display: flex;
+    flex-wrap: wrap; }
+    .container .section {
+      width: 425px; } }
+@media (min-width: 1400px) {
+  .header {
+    padding: 80px 0 60px;
+    max-width: 600px; }
+    .header_title, .header_highlight {
+      font-size: 2.3rem; }
+    .header_highlight {
+      margin-top: 16px; }
+    .header_description {
+      margin: 28px 28px 0;
+      font-size: 15px; }
+
+  .container {
+    width: 1128px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 352px 352px 352px;
+    grid-template-rows: 120px 120px 120px 120px;
+    row-gap: 18px;
+    column-gap: 36px;
+    grid-template-areas: '. team .' 'supervisor team calculator' 'supervisor karma calculator' '. karma .'; }
+    .container .section {
+      width: 352px;
+      padding: 28px; }
+      .container .section_title {
+        font-size: 1.4rem; }
+      .container .section_icon {
+        right: 28px; }
+    .container .supervisor {
+      grid-area: supervisor; }
+    .container .team {
+      grid-area: team; }
+    .container .karma {
+      grid-area: karma; }
+    .container .calculator {
+      grid-area: calculator; } }
+
+/*# sourceMappingURL=main.css.map */

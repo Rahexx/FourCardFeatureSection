@@ -1,0 +1,214 @@
+$red: hsl(0, 78%, 62%);
+$cyan: hsl(180, 62%, 55%);
+$orange: hsl(34, 97%, 64%);
+$blue: hsl(212, 86%, 64%);
+$very-dark-blue: hsl(234, 12%, 34%);
+$grayish-blue: hsl(229, 6%, 66%);
+$very-light-gray: hsl(0, 0%, 98%);
+$white: hsl(0, 0%, 100%);
+$font-weight-light: 200;
+$font-weight-regular: 400;
+$font-weight-bold: 600;
+$font-size-small: 0.933rem;
+$font-size-base: 15px;
+$font-size-large: 1.067rem;
+$font-size-medium: 1.4rem;
+$font-size-big: 1.7rem;
+$font-size-xl: 2.13rem;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: $font-size-base;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: $very-light-gray;
+}
+
+.header {
+  padding: 80px 0;
+  line-height: 35px;
+  color: $very-dark-blue;
+
+  &_title {
+    font-size: $font-size-big;
+    font-weight: $font-weight-light;
+    text-align: center;
+  }
+
+  &_highlight {
+    font-size: $font-size-big;
+    font-weight: $font-weight-bold;
+    text-align: center;
+    display: block;
+  }
+
+  &_description {
+    margin: 14px 28px 0;
+    color: $grayish-blue;
+    line-height: 26px;
+    font-size: $font-size-large;
+    font-weight: $font-weight-regular;
+    text-align: center;
+  }
+}
+
+.container {
+  padding-bottom: 80px;
+
+  .section {
+    position: relative;
+    height: 240px;
+    width: 86%;
+    margin: 0 auto 24px;
+    padding: 24px;
+    background: $white;
+    border-radius: 8px;
+    box-shadow: 2px 4px 12px 0 rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      display: block;
+      content: '';
+    }
+
+    &.supervisor::before {
+      background: $cyan;
+    }
+
+    &.team::before {
+      background: $red;
+    }
+
+    &.karma::before {
+      background: $orange;
+    }
+
+    &.calculator::before {
+      background: $blue;
+    }
+
+    &_title {
+      color: $very-dark-blue;
+      font-size: $font-size-big;
+      font-weight: $font-weight-bold;
+    }
+
+    &_text {
+      margin-top: 4px;
+      color: $grayish-blue;
+      line-height: 26px;
+      font-size: $font-size-small;
+      font-weight: $font-weight-regular;
+    }
+
+    &_icon {
+      position: absolute;
+      bottom: 24px;
+      right: 24px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+    max-width: 450px;
+    margin: 0 auto;
+
+    &_title,
+    &_highlight {
+      font-size: $font-size-xl;
+    }
+  }
+  .container {
+    max-width: 425px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: none;
+    display: flex;
+    flex-wrap: wrap;
+
+    .section {
+      width: 425px;
+    }
+  }
+}
+
+@media (min-width: 1400px) {
+  .header {
+    padding: 80px 0 60px;
+    max-width: 600px;
+
+    &_title,
+    &_highlight {
+      font-size: 2.3rem;
+    }
+
+    &_highlight {
+      margin-top: 16px;
+    }
+
+    &_description {
+      margin: 28px 28px 0;
+      font-size: $font-size-base;
+    }
+  }
+  .container {
+    width: 1128px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 352px 352px 352px;
+    grid-template-rows: 120px 120px 120px 120px;
+    row-gap: 18px;
+    column-gap: 36px;
+    grid-template-areas:
+      '. team .'
+      'supervisor team calculator'
+      'supervisor karma calculator'
+      '. karma .';
+
+    .section {
+      width: 352px;
+      padding: 28px;
+
+      &_title {
+        font-size: $font-size-medium;
+      }
+
+      &_icon {
+        right: 28px;
+      }
+    }
+
+    .supervisor {
+      grid-area: supervisor;
+    }
+
+    .team {
+      grid-area: team;
+    }
+
+    .karma {
+      grid-area: karma;
+    }
+
+    .calculator {
+      grid-area: calculator;
+    }
+  }
+}
